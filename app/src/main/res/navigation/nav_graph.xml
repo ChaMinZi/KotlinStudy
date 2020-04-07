@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fg_home">
+
+    <fragment
+        android:id="@+id/fg_home"
+        android:label="HOME"
+        android:name="com.example.kotlinstudy.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/fg_promotion"
+        android:label="PROMOTION"
+        android:name="com.example.kotlinstudy.PromotionFragment"
+        tools:layout="@layout/fragment_promotion"/>
+
+    <fragment
+        android:id="@+id/fg_trip"
+        android:label="MYTRIP"
+        android:name="com.example.kotlinstudy.TripFragment"
+        tools:layout="@layout/fragment_trip"/>
+
+    <fragment
+        android:id="@+id/fg_account"
+        android:label="MYACCOUNT"
+        android:name="com.example.kotlinstudy.AccountFragment"
+        tools:layout="@layout/fragment_account"/>
+
+</navigation>
