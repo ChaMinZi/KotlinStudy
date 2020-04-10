@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/ic_home_disabled" />
+
+    <item
+        android:id="@+id/action_promotion"
+        android:title="@string/menu_promotion"
+        android:icon="@drawable/ic_promotion_disabled"/>
+
+    <item
+        android:id="@+id/action_trip"
+        android:title="@string/menu_trip"
+        android:icon="@drawable/ic_trip_disabled"/>
+
+    <item
+        android:id="@+id/action_account"
+        android:title="@string/menu_account"
+        android:icon="@drawable/ic_mypage_disabled"/>
+</menu>

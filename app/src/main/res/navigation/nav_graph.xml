@@ -9,24 +9,103 @@
         android:id="@+id/fg_home"
         android:label="HOME"
         android:name="com.example.kotlinstudy.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_fg_home_to_fg_promotion"
+            app:destination="@id/fg_promotion"
+            app:popUpTo="@id/fg_promotion"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_home_to_fg_trip"
+            app:destination="@id/fg_trip"
+            app:popUpTo="@id/fg_trip"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_home_to_fg_account"
+            app:destination="@id/fg_account"
+            app:popUpTo="@id/fg_account"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
         android:id="@+id/fg_promotion"
         android:label="PROMOTION"
         android:name="com.example.kotlinstudy.PromotionFragment"
-        tools:layout="@layout/fragment_promotion"/>
+        tools:layout="@layout/fragment_promotion">
+
+        <action
+            android:id="@+id/action_fg_promotion_to_fg_trip"
+            app:destination="@id/fg_trip"
+            app:popUpTo="@id/fg_trip"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_promotion_to_fg_account"
+            app:destination="@id/fg_account"
+            app:popUpTo="@id/fg_account"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_promotion_to_fg_home"
+            app:destination="@id/fg_home"
+            app:popUpTo="@id/fg_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
         android:id="@+id/fg_trip"
         android:label="MYTRIP"
         android:name="com.example.kotlinstudy.TripFragment"
-        tools:layout="@layout/fragment_trip"/>
+        tools:layout="@layout/fragment_trip">
+
+        <action
+            android:id="@+id/action_fg_trip_to_fg_promotion"
+            app:destination="@id/fg_promotion"
+            app:popUpTo="@id/fg_promotion"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_trip_to_fg_account"
+            app:destination="@id/fg_account"
+            app:popUpTo="@id/fg_account"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_trip_to_fg_home"
+            app:destination="@id/fg_home"
+            app:popUpTo="@id/fg_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
         android:id="@+id/fg_account"
         android:label="MYACCOUNT"
         android:name="com.example.kotlinstudy.AccountFragment"
-        tools:layout="@layout/fragment_account"/>
+        tools:layout="@layout/fragment_account">
 
+        <action
+            android:id="@+id/action_fg_account_to_fg_promotion"
+            app:destination="@id/fg_promotion"
+            app:popUpTo="@id/fg_promotion"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_account_to_fg_home"
+            app:destination="@id/fg_home"
+            app:popUpTo="@id/fg_home"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fg_account_to_fg_trip"
+            app:destination="@id/fg_trip"
+            app:popUpTo="@id/fg_trip"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_fg_account_to_fg_setting"
+            app:destination="@id/fg_setting" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fg_setting"
+        android:label="Settings"
+        android:name="com.example.kotlinstudy.SettingFragment"
+        tools:layout="@layout/fragment_setting">
+
+    </fragment>
 </navigation>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:id="@+id/btn_language"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="언어"
+            android:textStyle="bold"
+            android:textColor="@color/colorMyPageTitleText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:text="한국어"
+            android:textColor="@color/colorMyPageTitleText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_country"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="국가 또는 지역"
+            android:textStyle="bold"
+            android:textColor="@color/colorMyPageTitleText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:text="대한민국"
+            android:textColor="@color/colorMyPageTitleText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_money"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="기준통화"
+            android:textStyle="bold"
+            android:textColor="@color/colorMyPageTitleText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:text="KRW"
+            android:textColor="@color/colorMyPageTitleText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_unit"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="단어"
+            android:textStyle="bold"
+            android:textColor="@color/colorMyPageTitleText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:text="미터법 (km, ㎡)"
+            android:textColor="@color/colorMyPageTitleText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="온도 눈금"
+            android:textStyle="bold"
+            android:textColor="@color/colorMyPageTitleText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:text="섭씨 (℃)"
+            android:textColor="@color/colorMyPageTitleText"/>
+    </LinearLayout>
+    
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccountGrey"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"/>
+
+    <Button
+        android:id="@+id/btn_alter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="알림"
+        android:textColor="@color/colorMyPageTitleText"
+        android:textStyle="bold"
+        android:gravity="center|left"
+        android:background="@color/colorWhite"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="스크린샷 공유"
+            android:textColor="@color/colorMyPageTitleText"
+            android:textStyle="bold" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_qrcode_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QR코드 스캔"
+        android:textColor="@color/colorMyPageTitleText"
+        android:textStyle="bold"
+        android:gravity="center|left"
+        android:background="@color/colorWhite"/>
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccountGrey"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"/>
+
+    <Button
+        android:id="@+id/btn_evaluate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="트립닷컴앱 평가하기"
+        android:textColor="@color/colorMyPageTitleText"
+        android:textStyle="bold"
+        android:gravity="center|left"
+        android:background="@color/colorWhite"/>
+
+    <Button
+        android:id="@+id/btn_clause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이용약관"
+        android:textColor="@color/colorMyPageTitleText"
+        android:textStyle="bold"
+        android:gravity="center|left"
+        android:background="@color/colorWhite"/>
+
+    <Button
+        android:id="@+id/btn_privacy_policy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="개인정보 처리방침"
+        android:textColor="@color/colorMyPageTitleText"
+        android:textStyle="bold"
+        android:gravity="center|left"
+        android:background="@color/colorWhite"/>
+
+    <LinearLayout
+        android:id="@+id/btn_version"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="버전"
+            android:textStyle="bold"
+            android:textColor="@color/colorMyPageTitleText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:text="7.6.3"
+            android:textColor="@color/colorMyPageTitleText"/>
+    </LinearLayout>
+</LinearLayout>
