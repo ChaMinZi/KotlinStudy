@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="chatting_menu_delete"
+        android:id="@+id/chatting_menu_delete"
         android:icon="@drawable/ic_highlight_off"
         android:title=""
         app:showAsAction="ifRoom"/>

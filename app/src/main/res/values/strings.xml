@@ -6,8 +6,8 @@
     <string name="menu_trip">My 트립</string>
     <string name="menu_account">My 계정</string>
 
-    <string name="menu_search"></string>
-    <string name="menu_post"></string>
+    <string name="menu_search">검색</string>
+    <string name="menu_post">메세지</string>
 
     <string name="setting_title">설정</string>
 </resources>

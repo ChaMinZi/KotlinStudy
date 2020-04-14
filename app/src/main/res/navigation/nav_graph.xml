@@ -106,6 +106,5 @@
         android:label="Settings"
         android:name="com.example.kotlinstudy.SettingFragment"
         tools:layout="@layout/fragment_setting">
-
     </fragment>
 </navigation>
