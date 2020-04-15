@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/fg_home"
         android:title="@string/menu_home"
-        android:icon="@drawable/ic_home_disabled" />
+        android:icon="@drawable/ic_home_disabled"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/fg_promotion"
         android:title="@string/menu_promotion"
-        android:icon="@drawable/ic_promotion_disabled"/>
+        android:icon="@drawable/ic_promotion_disabled"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/fg_trip"
         android:title="@string/menu_trip"
-        android:icon="@drawable/ic_trip_disabled"/>
+        android:icon="@drawable/ic_trip_disabled"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/fg_account"
         android:title="@string/menu_account"
-        android:icon="@drawable/ic_mypage_disabled"/>
+        android:icon="@drawable/ic_mypage_disabled"
+        app:showAsAction="ifRoom"/>
 </menu>

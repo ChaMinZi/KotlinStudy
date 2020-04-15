@@ -8,14 +8,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- BottomNavigation them -->
+    <!-- BottomNavigation them. -->
     <style name="AppTheme.BottomNavigationBar" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
         <item name="colorPrimary">@color/colorWhite</item>
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
 
-    <!--Fragment home ActionBar. -->
+    <!-- Fragment home ActionBar. -->
     <style name="AppTheme.ActionBar" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
         <item name="colorPrimary">@color/colorTransparent</item>
+    </style>
+
+    <!-- Fragment Account ActionBar. -->
+    <style name="AppTheme.Overlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorAccountGrey</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay">
+        <item name="colorPrimary">@color/colorWhite</item>
     </style>
 </resources>
