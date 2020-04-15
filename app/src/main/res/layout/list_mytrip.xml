@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/list_trip_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="No"
+        android:textColor="@color/colorBlack"/>
+
+    <TextView
+        android:id="@+id/list_trip_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="city"
+        android:textColor="@color/colorBlack"/>
+
+    <TextView
+        android:id="@+id/list_trip_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="url"
+        android:textColor="@color/colorBlack"/>
+</LinearLayout>

@@ -247,14 +247,14 @@
                     app:backgroundTint="@color/colorWhite" />
             </RelativeLayout>
 
-            <androidx.viewpager.widget.ViewPager
+            <ImageView
                 android:id="@+id/btn_blurb"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/picture"/>
 
-            <androidx.viewpager.widget.ViewPager
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
