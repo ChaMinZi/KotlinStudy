@@ -129,17 +129,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorWhite"
                     android:drawableTop="@drawable/ic_rentcar"
                     android:text="렌터카"
-                    android:textColor="@color/colorMyPageTitleText" />
+                    android:textColor="@color/colorMyPageTitleText"
+                    android:backgroundTint="@color/colorWhite"/>
 
                 <Button
                     android:id="@+id/btn_pickup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorWhite"
+                    android:backgroundTint="@color/colorWhite"
                     android:drawableTop="@drawable/ic_pickup_taxi"
                     android:text="공항픽업"
                     android:textColor="@color/colorMyPageTitleText" />
@@ -149,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorWhite"
+                    android:backgroundTint="@color/colorWhite"
                     android:drawableTop="@drawable/ic_activity"
                     android:text="액티비티"
                     android:textColor="@color/colorMyPageTitleText" />
@@ -159,7 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/colorWhite"
+                    android:backgroundTint="@color/colorWhite"
                     android:drawableTop="@drawable/ic_tripguide"
                     android:text="트립 가이드"
                     android:textColor="@color/colorMyPageTitleText" />

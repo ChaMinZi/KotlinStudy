@@ -27,9 +27,7 @@ class TripFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_trip, container, false)
-        triplist = view.findViewById(
-            R.id.trip_mylist
-        )
+        triplist = view.findViewById(R.id.trip_mylist)
 
         loadData()
 
@@ -37,8 +35,8 @@ class TripFragment : Fragment() {
     }
 
     private fun setAdapter(city: ArrayList<CityX>) {
-        val mAdapter =
-            TripRVadapter(context, city)
+        val mAdapter = TripRVadapter(context, city)
+        triplist.setHasFixedSize(true)
         triplist.adapter = mAdapter
         triplist.layoutManager = LinearLayoutManager(context)
     }

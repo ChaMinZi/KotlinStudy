@@ -98,7 +98,16 @@
 
         <action
             android:id="@+id/action_fg_account_to_fg_setting"
-            app:destination="@id/fg_setting" />
+            app:destination="@id/fg_setting"
+            app:popUpTo="@id/fg_setting"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_fg_account_to_fg_bookmark"
+            app:destination="@id/fg_bookmark"
+            app:popUpTo="@id/fg_bookmark"
+            app:popUpToInclusive="true"/>
+
     </fragment>
 
     <fragment
@@ -106,5 +115,14 @@
         android:label="Settings"
         android:name="com.example.kotlinstudy.ui.fragments.SettingFragment"
         tools:layout="@layout/fragment_setting">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fg_bookmark"
+        android:label="Bookmark"
+        android:name="com.example.kotlinstudy.ui.fragments.BookmarkFragment"
+        tools:layout="@layout/fragment_bookmark_cities">
+
     </fragment>
 </navigation>
