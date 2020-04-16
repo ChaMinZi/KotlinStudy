@@ -1,10 +1,11 @@
-package com.example.kotlinstudy
+package com.example.kotlinstudy.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.kotlinstudy.R
 
 class PromotionFragment : Fragment() {
     override fun onCreateView(

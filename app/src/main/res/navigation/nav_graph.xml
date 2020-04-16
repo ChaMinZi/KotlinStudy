@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fg_home"
         android:label="HOME"
-        android:name="com.example.kotlinstudy.HomeFragment"
+        android:name="com.example.kotlinstudy.ui.fragments.HomeFragment"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/fg_promotion"
         android:label="PROMOTION"
-        android:name="com.example.kotlinstudy.PromotionFragment"
+        android:name="com.example.kotlinstudy.ui.fragments.PromotionFragment"
         tools:layout="@layout/fragment_promotion">
 
         <action
@@ -54,7 +54,7 @@
     <fragment
         android:id="@+id/fg_trip"
         android:label="MYTRIP"
-        android:name="com.example.kotlinstudy.TripFragment"
+        android:name="com.example.kotlinstudy.ui.fragments.TripFragment"
         tools:layout="@layout/fragment_trip">
 
         <action
@@ -77,7 +77,7 @@
     <fragment
         android:id="@+id/fg_account"
         android:label="MYACCOUNT"
-        android:name="com.example.kotlinstudy.AccountFragment"
+        android:name="com.example.kotlinstudy.ui.fragments.AccountFragment"
         tools:layout="@layout/fragment_account">
 
         <action
@@ -104,7 +104,7 @@
     <fragment
         android:id="@+id/fg_setting"
         android:label="Settings"
-        android:name="com.example.kotlinstudy.SettingFragment"
+        android:name="com.example.kotlinstudy.ui.fragments.SettingFragment"
         tools:layout="@layout/fragment_setting">
     </fragment>
 </navigation>

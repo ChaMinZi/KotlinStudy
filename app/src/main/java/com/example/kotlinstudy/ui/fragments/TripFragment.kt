@@ -1,4 +1,4 @@
-package com.example.kotlinstudy
+package com.example.kotlinstudy.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinstudy.*
+import com.example.kotlinstudy.adapters.TripRVadapter
+import com.example.kotlinstudy.network.City
+import com.example.kotlinstudy.network.CityX
+import com.example.kotlinstudy.network.RetrofitService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,7 +27,9 @@ class TripFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_trip, container, false)
-        triplist = view.findViewById(R.id.trip_mylist)
+        triplist = view.findViewById(
+            R.id.trip_mylist
+        )
 
         loadData()
 
@@ -30,7 +37,8 @@ class TripFragment : Fragment() {
     }
 
     private fun setAdapter(city: ArrayList<CityX>) {
-        val mAdapter = TripRVadapter(context, city)
+        val mAdapter =
+            TripRVadapter(context, city)
         triplist.adapter = mAdapter
         triplist.layoutManager = LinearLayoutManager(context)
     }

@@ -1,11 +1,14 @@
-package com.example.kotlinstudy
+package com.example.kotlinstudy.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlinstudy.network.CityX
+import com.example.kotlinstudy.R
+import kotlinx.android.synthetic.main.list_mytrip.view.*
 
 class TripRVadapter(val context: Context?, val city: ArrayList<CityX>) : RecyclerView.Adapter<TripRVadapter.ViewHolder>() {
 
@@ -25,14 +28,14 @@ class TripRVadapter(val context: Context?, val city: ArrayList<CityX>) : Recycle
     }
 
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
-        val city = itemView?.findViewById<TextView>(R.id.list_trip_city)
-        val no = itemView?.findViewById<TextView>(R.id.list_trip_no)
-        val url = itemView?.findViewById<TextView>(R.id.list_trip_url)
-
         fun bind(itemCity : CityX?, context: Context) {
-            no?.text = itemCity?.no.toString()
-            city?.text = itemCity?.city
-            url?.text = itemCity?.url
+            itemView.list_trip_no.text = itemCity?.no.toString()
+            itemView.list_trip_city.text = itemCity?.city
+            itemView.list_trip_url.text = itemCity?.url
+
+            itemView.setOnClickListener {
+                Toast.makeText(itemView.context, "setClickListener : "+ itemCity!!.no+" "+itemCity.city, Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

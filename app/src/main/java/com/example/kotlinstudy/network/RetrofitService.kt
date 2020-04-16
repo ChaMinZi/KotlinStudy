@@ -1,5 +1,6 @@
-package com.example.kotlinstudy
+package com.example.kotlinstudy.network
 
+import com.example.kotlinstudy.network.City
 import retrofit2.Call
 import retrofit2.http.GET
 

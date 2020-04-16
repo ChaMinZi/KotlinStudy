@@ -1,4 +1,4 @@
-package com.example.kotlinstudy
+package com.example.kotlinstudy.ui.fragments
 
 import android.os.Bundle
 import android.view.*
