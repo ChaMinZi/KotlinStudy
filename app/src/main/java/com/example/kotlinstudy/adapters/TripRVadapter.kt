@@ -12,16 +12,11 @@ import com.example.kotlinstudy.network.CityX
 import com.example.kotlinstudy.R
 import kotlinx.android.synthetic.main.list_mytrip.view.*
 
-class TripRVadapter(val context: Context?, val city: ArrayList<CityX>) : RecyclerView.Adapter<TripRVadapter.ViewHolder>() {
-
-    interface ItemClick {
-        fun onClick(view: View, position: Int)
-    }
-    private var itemClick: ItemClick? = null
+class TripRVadapter(val context: Context?, val city: ArrayList<CityX>, val itemClick: (CityX) -> Unit) : RecyclerView.Adapter<TripRVadapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.list_mytrip, parent, false)
-        return ViewHolder(view)
+        return ViewHolder(view, itemClick)
     }
 
     override fun getItemCount(): Int {
@@ -31,19 +26,18 @@ class TripRVadapter(val context: Context?, val city: ArrayList<CityX>) : Recycle
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (context != null) {
             holder.bind(city[position], context)
-            holder.btn_bookmark.setOnClickListener {
-                Toast.makeText(context, "setClickListener : clicked "+ position, Toast.LENGTH_SHORT).show()
-            }
         }
     }
 
-    inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
+    inner class ViewHolder(itemView: View?, itemClick: (CityX) -> Unit) : RecyclerView.ViewHolder(itemView!!) {
         val btn_bookmark= itemView!!.findViewById<ImageView>(R.id.list_trip_favorite)
 
         fun bind(itemCity : CityX?, context: Context) {
             itemView.list_trip_no.text = itemCity?.no.toString()
             itemView.list_trip_city.text = itemCity?.city
             itemView.list_trip_url.text = itemCity?.url
+
+            btn_bookmark.setOnClickListener { itemClick(itemCity!!) }
         }
     }
 }

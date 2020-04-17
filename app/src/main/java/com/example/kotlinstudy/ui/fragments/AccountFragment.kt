@@ -27,8 +27,6 @@ class AccountFragment : Fragment() {
             view.findNavController().navigate(R.id.action_fg_account_to_fg_bookmark)
         }
 
-
-
         return view
     }
 }

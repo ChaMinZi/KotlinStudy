@@ -5,11 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinstudy.*
 import com.example.kotlinstudy.adapters.TripRVadapter
+import com.example.kotlinstudy.database.BookmarkCityEntity
+import com.example.kotlinstudy.database.BookmarkViewModel
 import com.example.kotlinstudy.network.City
 import com.example.kotlinstudy.network.CityX
 import com.example.kotlinstudy.network.RetrofitService
@@ -20,6 +25,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class TripFragment : Fragment() {
+
+    private lateinit var bookmarkViewModel: BookmarkViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        bookmarkViewModel = ViewModelProviders.of(this).get(BookmarkViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,10 +47,13 @@ class TripFragment : Fragment() {
     }
 
     private fun setAdapter(city: ArrayList<CityX>) {
-        val mAdapter = TripRVadapter(context, city)
-        triplist.setHasFixedSize(true)
+        val mAdapter = TripRVadapter(context, city) {cityX ->
+            Toast.makeText(context, "clicked"+cityX.no, Toast.LENGTH_LONG).show()
+            insertBookmark(cityX)
+        }
         triplist.adapter = mAdapter
         triplist.layoutManager = LinearLayoutManager(context)
+        triplist.setHasFixedSize(true)
     }
 
     private fun loadData() {
@@ -63,6 +78,15 @@ class TripFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun insertBookmark(city: CityX) {
+        val bookmark = BookmarkCityEntity(
+            no = city.no,
+            name = city.city,
+            url = city.url
+        )
+        bookmarkViewModel.insert(bookmark)
     }
 
     companion object {
