@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,7 +50,13 @@ class TripFragment : Fragment() {
     private fun setAdapter(city: ArrayList<CityX>) {
         val mAdapter = TripRVadapter(context, city) {cityX ->
             Toast.makeText(context, "clicked"+cityX.no, Toast.LENGTH_LONG).show()
-            insertBookmark(cityX)
+
+            if (findExistByCityId(cityX)) {
+                deleteBookmark(cityX)
+            }
+            else {
+                insertBookmark(cityX)
+            }
         }
         triplist.adapter = mAdapter
         triplist.layoutManager = LinearLayoutManager(context)
@@ -82,11 +89,24 @@ class TripFragment : Fragment() {
 
     private fun insertBookmark(city: CityX) {
         val bookmark = BookmarkCityEntity(
-            no = city.no,
+            city_id = city.no,
             name = city.city,
             url = city.url
         )
         bookmarkViewModel.insert(bookmark)
+    }
+
+    private fun findExistByCityId(city: CityX) : Boolean {
+        var chk : Boolean = true
+        bookmarkViewModel.getBookmarkById(city.no).observe(viewLifecycleOwner, Observer {
+            if (it == null)
+                chk = false
+        })
+        return chk
+    }
+
+    private fun deleteBookmark(city: CityX) {
+        bookmarkViewModel.delete(city.no)
     }
 
     companion object {

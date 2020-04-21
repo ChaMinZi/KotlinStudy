@@ -20,10 +20,24 @@ class BookmarkRepository(application: Application) {
 
     fun getAll(): LiveData<List<BookmarkCityEntity>> { return bookmarks }
 
+    fun getBookmarkById(city_id: Int): LiveData<BookmarkCityEntity> {
+        return bookmarkCityDao.getBookmarkById(city_id)
+    }
+
     fun insert(bookmark: BookmarkCityEntity) {
         val addRunaable = object : Runnable {
             override fun run() {
                 bookmarkCityDao.insert(bookmark)
+            }
+        }
+        val diskIO: Executor = Executors.newSingleThreadExecutor()
+        diskIO.execute(addRunaable)
+    }
+
+    fun delete(city_id: Int) {
+        val addRunaable = object : Runnable {
+            override fun run() {
+                bookmarkCityDao.deleteById(city_id)
             }
         }
         val diskIO: Executor = Executors.newSingleThreadExecutor()

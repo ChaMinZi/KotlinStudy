@@ -16,7 +16,15 @@ class BookmarkViewModel(application: Application) : AndroidViewModel(application
 
     fun getAll() = bookmarks
 
+    fun getBookmarkById(id: Int): LiveData<BookmarkCityEntity> {
+        return repository.getBookmarkById(id)
+    }
+
     fun insert(bookmark: BookmarkCityEntity) {
         repository.insert(bookmark)
+    }
+
+    fun delete(city_id: Int) {
+        repository.delete(city_id)
     }
 }
