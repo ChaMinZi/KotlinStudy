@@ -1,11 +1,15 @@
 package com.example.kotlinstudy.ui.fragments
 
+import android.graphics.Color
+import android.graphics.Color.WHITE
+import android.graphics.Color.parseColor
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.ColorInt
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -13,12 +17,15 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinstudy.*
+import com.example.kotlinstudy.R.color.colorWhite
 import com.example.kotlinstudy.adapters.TripRVadapter
 import com.example.kotlinstudy.database.BookmarkCityEntity
 import com.example.kotlinstudy.database.BookmarkViewModel
 import com.example.kotlinstudy.network.City
 import com.example.kotlinstudy.network.CityX
 import com.example.kotlinstudy.network.RetrofitService
+import com.google.android.material.appbar.AppBarLayout
+import kotlinx.android.synthetic.main.fragment_trip.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +48,25 @@ class TripFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_trip, container, false)
         triplist = view.findViewById(R.id.trip_mylist)
+        appbar = view.findViewById(R.id.appbar_trip)
+
+        appbar.addOnOffsetChangedListener (object : AppBarLayout.OnOffsetChangedListener {
+            internal var scrollRange = -1
+
+            override fun onOffsetChanged(appBarLayout: AppBarLayout?, verticalOffset: Int) {
+                if (scrollRange == -1)
+                    scrollRange = appBarLayout!!.totalScrollRange
+
+                val scale = 1 +verticalOffset/scrollRange.toFloat()
+
+                if (scale <= 0) {
+                    appBarLayout!!.elevation = 50f
+                    appBarLayout.setBackgroundColor(Color.WHITE)
+                }
+                else
+                    appBarLayout!!.elevation = 0f
+            }
+        })
 
         loadData()
 
@@ -111,5 +137,6 @@ class TripFragment : Fragment() {
 
     companion object {
         private lateinit var triplist : RecyclerView
+        private lateinit var appbar : AppBarLayout
     }
 }

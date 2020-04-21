@@ -24,15 +24,13 @@ class TripRVadapter(val context: Context?, val city: ArrayList<CityX>, val itemC
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (context != null) {
-            holder.bind(city[position], context)
-        }
+        holder.bind(city[position])
     }
 
     inner class ViewHolder(itemView: View?, itemClick: (CityX) -> Unit) : RecyclerView.ViewHolder(itemView!!) {
         val btn_bookmark= itemView!!.findViewById<ImageView>(R.id.list_trip_favorite)
 
-        fun bind(itemCity : CityX?, context: Context) {
+        fun bind(itemCity : CityX?) {
             itemView.list_trip_no.text = itemCity?.no.toString()
             itemView.list_trip_city.text = itemCity?.city
             itemView.list_trip_url.text = itemCity?.url

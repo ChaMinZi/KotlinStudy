@@ -108,7 +108,7 @@
             android:layout_gravity="center"
             android:text="단어"
             android:textStyle="bold"
-            android:textColor="@color/colorMyPageTitleText"/>
+            android:textColor="@color/colorMyPageTitleText" />
 
         <TextView
             android:layout_width="match_parent"
